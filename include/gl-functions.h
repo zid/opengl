@@ -1,0 +1,38 @@
+#include <windows.h>
+
+ABI GLuint (*glCreateShader)(GLenum);
+ABI void   (*glShaderSource)(GLuint, GLsizei, const GLchar **, const GLint *);
+ABI void   (*glCompileShader)(GLuint);
+ABI GLuint (*glCreateProgram)(void);
+ABI void   (*glUseProgram)(GLuint);
+ABI void   (*glLinkProgram)(GLuint);
+ABI void   (*glAttachShader)(GLuint, GLuint);
+ABI void   (*glGetShaderInfoLog)(GLuint, GLsizei, GLsizei *, GLchar *);
+ABI void   (*glGetShaderiv)(GLuint, GLenum, GLint *);
+ABI HGLRC  (*wglCreateContextAttribsARB)(HDC hDC, HGLRC hshareContext, const int *attribList);
+ABI BOOL   (*wglChoosePixelFormatARB)(HDC, const int *, const float *, UINT, int *, UINT *);
+ABI void   (*glBindBuffer)(GLenum, GLuint);
+ABI void   (*glGenBuffers)(GLsizei, GLuint *);
+ABI void   (*glBufferData)(GLenum, GLsizeiptr, const GLvoid *, GLenum);
+ABI void   (*glGenVertexArrays)(GLsizei, GLuint *);
+ABI void   (*glBindVertexArray)(GLuint);
+ABI void   (*glVertexAttribPointer)(GLuint, GLint, GLenum, GLboolean, GLsizei, const GLvoid *);
+ABI void   (*glEnableVertexAttribArray)(GLuint);
+ABI GLuint (*glCreateShader)(GLenum);
+ABI void   (*glShaderSource)(GLuint, GLsizei, const GLchar **, const GLint *);
+ABI void   (*glCompileShader)(GLuint);
+ABI GLuint (*glCreateProgram)(void);
+ABI void   (*glUseProgram)(GLuint);
+ABI void   (*glLinkProgram)(GLuint);
+ABI void   (*glAttachShader)(GLuint, GLuint);
+ABI void   (*wglSwapIntervalEXT)(GLuint);
+ABI void   (*glUniform1ui)(GLint, GLuint);
+ABI void   (*glUniform1i)(GLint, GLuint);
+ABI void   (*glUniformMatrix4fv)(GLint, GLsizei, GLboolean, const GLfloat *);
+ABI GLint  (*glGetUniformLocation)(GLuint, const GLchar *);
+ABI void   (*glDeleteShader)(GLuint);
+ABI void   (*glDeleteProgram)(GLuint);
+ABI void   (*glActiveTexture)(GLenum);
+ABI void   (*glGenerateMipmap)(GLuint);
+ABI void   (*glGetShaderInfoLog)(GLuint, GLsizei, GLsizei *, GLchar *);
+ABI void   (*glGetShaderiv)(GLuint, GLenum, GLint *);

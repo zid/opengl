@@ -1,0 +1,50 @@
+#version 400
+
+layout(location=0) in vec3 pos;
+out vec3 vpos;
+
+uniform unsigned int frames;
+flat out unsigned int framecount;
+
+uniform mat4 persp;
+uniform mat4 trans;
+
+void main(void)
+{
+	float ff = float(frames)/60.0;
+	float xr, yr, zr;
+	vec4 local;
+
+	xr = 0.0 + ff/28.34;
+	yr = 0.0 + (ff/2.17);
+	zr = 0.0 + (ff/8.36);
+
+	mat4 rotz = mat4(
+		cos(zr), -sin(zr), 0, 0,
+		sin(zr), cos(zr), 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1
+	);
+
+	mat4 roty = mat4(
+		cos(yr), 0, sin(yr), 0,
+		0, 1, 0, 0,
+		-sin(yr), 0, cos(yr), 0,
+		0, 0, 0, 1
+	);
+	
+	mat4 rotx = mat4(
+		1, 0, 0, 0,
+		0, cos(xr), -sin(xr), 0,
+		0, sin(xr), cos(xr), 0,
+		0, 0, 0, 1
+	);
+
+
+	local = rotz * roty * rotx * vec4(pos, 1.0);
+	gl_Position = persp * trans * local;
+
+	vpos = pos.xyz;
+
+	framecount = frames;
+}

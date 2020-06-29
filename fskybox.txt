@@ -1,0 +1,10 @@
+#version 400
+
+in vec3 vpos;
+out vec4 outcol;
+uniform samplerCube cubetex;
+
+void main(void)
+{
+	outcol = texture(cubetex, vec3(vpos.x, -vpos.y, vpos.z));
+}
