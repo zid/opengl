@@ -38,7 +38,6 @@ struct shader *shader_create(const char *fpath, const char *vpath)
 	if(!s)
 		return NULL;
 
-
 	s->vshade_path = strdup(vpath);
 	s->fshade_path = strdup(fpath);
 
@@ -79,6 +78,7 @@ struct shader *shader_create(const char *fpath, const char *vpath)
 
 void shader_reload(struct shader **s)
 {
+
 	char *vpath, *fpath;
 	struct shader *old, *new;
 
@@ -91,7 +91,7 @@ void shader_reload(struct shader **s)
 	glDeleteShader(old->fshade);
 	glDeleteProgram(old->program);
 
-	new = shader_create(vpath, fpath);
+	new = shader_create(fpath, vpath);
 	free(vpath);
 	free(fpath);
 	free(old);

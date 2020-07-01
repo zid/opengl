@@ -1,9 +1,10 @@
-#include <png.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdarg.h>
+#include "zpng.h"
 
-void zerror(const char *fmt, ...)
+static void zerror(const char *fmt, ...)
 {
 	va_list v;
 	va_start(v, fmt);

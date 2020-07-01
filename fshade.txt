@@ -1,8 +1,8 @@
-#version 400
+#version 430
 
 in vec3 vpos;
 out vec4 outcol;
-uniform samplerCube cubetex;
+layout(binding = 0) uniform samplerCube cubetex;
 
 void main(void)
 {
